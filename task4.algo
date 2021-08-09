@@ -1,0 +1,25 @@
+PROCEDURE swap(VAR a,b : INTEGER)
+VAR
+    aux : INTEGER 
+BEGIN
+    aux := a 
+    a:= b 
+    b:= aux
+END
+
+ALGORITHM Sort
+VAR
+    arr : ARRAY_OF INTEGER[50];
+    i,j,n : INTEGER 
+BEGIN
+    write ('insert number')
+    read (n)
+    arr.push(n)
+    FOR i FROM 0 TO arr.length-1 STEP DO
+        j:= i 
+        WHILE ( j>0 , arr[j]< arr[j-1]) DO
+            swap (arr[j], arr[j-1])
+            j := j-1 
+        END_WHILE
+    END_FOR
+END
